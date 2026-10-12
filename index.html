@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Registration System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h2>Employee Registration Form</h2>
+
+    <!-- Registration Form -->
+    <form id="employeeForm" novalidate>
+      <h3>Enter Employee Details</h3>
+
+      <div class="form-grid">
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="empName">Full Name:</label>
+          <input type="text" id="empName" placeholder="e.g. Aditya Sharma">
+          <small class="error-msg" id="nameError"></small>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="empEmail">Email Address:</label>
+          <input type="email" id="empEmail" placeholder="e.g. aditya@company.com">
+          <small class="error-msg" id="emailError"></small>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="empPassword">Password:</label>
+          <input type="password" id="empPassword" placeholder="Min. 6 characters">
+          <small class="error-msg" id="passwordError"></small>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="form-group">
+          <label for="empPhone">Phone Number:</label>
+          <input type="tel" id="empPhone" placeholder="10-digit mobile number">
+          <small class="error-msg" id="phoneError"></small>
+        </div>
+
+        <!-- Department -->
+        <div class="form-group full-width">
+          <label for="empDept">Department:</label>
+          <select id="empDept">
+            <option value="">-- Select Department --</option>
+            <option value="Information Technology">Information Technology (IT)</option>
+            <option value="Human Resources">Human Resources (HR)</option>
+            <option value="Finance & Accounts">Finance & Accounts</option>
+            <option value="Marketing & Sales">Marketing & Sales</option>
+            <option value="Operations">Operations</option>
+          </select>
+          <small class="error-msg" id="deptError"></small>
+        </div>
+      </div>
+
+      <div class="btn-group">
+        <button type="submit" id="submitBtn">Register Employee</button>
+        <button type="reset" id="resetBtn">Reset</button>
+      </div>
+    </form>
+
+    <!-- Total Employees Summary Box -->
+    <div class="summary-box">
+      <strong>Total Registered Employees: </strong>
+      <span id="totalCount">0</span>
+    </div>
+
+    <!-- Employee Records Table -->
+    <h3>Registered Employees List</h3>
+    <div class="table-wrapper">
+      <table id="employeeTable">
+        <thead>
+          <tr>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Department</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="employeeTableBody">
+          <!-- Dynamically populated rows -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
